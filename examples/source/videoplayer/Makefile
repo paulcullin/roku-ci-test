@@ -30,9 +30,9 @@ num_functions := $(shell grep -ri --include=*.brs 'end \(function\|sub\)' . | wc
 
 manifest:
 	echo "Updating manifest for $(APPTITLE)"
-	sed -i '' -- "s/^\( *major_version=*\)[0-9][0-9]*/\1$(MAJOR)/" manifest
-	sed -i '' -- "s/^\( *minor_version=*\)[0-9][0-9]*/\1$(MINOR)/" manifest
-	sed -i '' -- "s/^\( *build_version=*\)[0-9][0-9]*/\1$(REVISION)/" manifest
+	sed -i -- "s/^\( *major_version=*\)[0-9][0-9]*/\1$(MAJOR)/" manifest
+	sed -i -- "s/^\( *minor_version=*\)[0-9][0-9]*/\1$(MINOR)/" manifest
+	sed -i -- "s/^\( *build_version=*\)[0-9][0-9]*/\1$(REVISION)/" manifest
 
 count_functions:
 	echo "Counting functions for $(APPTITLE), some Rokus limit to 768"
